@@ -22,17 +22,27 @@ namespace FortuneTellerMVC.Controllers
 
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
+        
         {
-            if (id == null)
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Customer customer = db.Customers.Find(id);
+            //if (customer == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(customer);
+
+            if (id % 2== 0 )
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return ViewBag.RetirementAge = 75;
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
-            {
-                return HttpNotFound();
+            else
+            { 
+                return ViewBag.RetirementAge = 20;
             }
-            return View(customer);
         }
 
         // GET: Customers/Create
